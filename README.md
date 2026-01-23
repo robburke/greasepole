@@ -37,10 +37,10 @@ The game was originally written in C++ and released in 1999 (on CDs - remember t
 The game was ported to XBox using XNA Game Studio. This version brought the game to consoles for those who had a subscription to the XNA Creators Club.
 
 ### Silverlight Era (2010)
-The game was ported to Microsoft Silverlight using C#. This version ran successfully for years until Silverlight was deprecated and removed from browsers. The Silverlight codebase is included here as the **canonical reference** for game logic and behavior.
+The game was ported to Microsoft Silverlight using C#. This version ran successfully for years until Silverlight was deprecated. The Silverlight codebase is included here as the **canonical reference** for game logic and behavior.
 
 ### Godot Revival feat. AI (2025)
-Silverlight is dead and the was game unplayable, but the Greasepole is eternal. Working collaboratively with [Claude](https://claude.ai) (Anthropic's AI assistant), the game was ported in two stages:
+Silverlight is dead, but the Greasepole is eternal. Working collaboratively with [Claude](https://claude.ai) (Anthropic's AI assistant), the game was ported in two stages:
 
 1. **Silverlight C# → Godot C#**: A direct port preserving the original architecture and game logic. This version is feature-complete and runs "perfectly" as a desktop application.
 
