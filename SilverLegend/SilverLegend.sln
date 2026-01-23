@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverLegend", "SilverLegend\SilverLegend.csproj", "{19BD17FA-7043-4ED8-8BB5-9409EE2BE579}"
+	ProjectSection(ProjectDependencies) = postProject
+		{16D35D43-35E3-41F5-A07C-2821F93561B8} = {16D35D43-35E3-41F5-A07C-2821F93561B8}
+		{960B995A-A775-47B4-AC61-1D2C5BCD46F0} = {960B995A-A775-47B4-AC61-1D2C5BCD46F0}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverLegend.Web", "SilverLegend.Web\SilverLegend.Web.csproj", "{7F3785F4-5853-4311-AE3A-AE4C702631FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{16D35D43-35E3-41F5-A07C-2821F93561B8} = {16D35D43-35E3-41F5-A07C-2821F93561B8}
+		{DAED2147-7BD2-4B88-A241-4565487B8DBB} = {DAED2147-7BD2-4B88-A241-4565487B8DBB}
+		{960B995A-A775-47B4-AC61-1D2C5BCD46F0} = {960B995A-A775-47B4-AC61-1D2C5BCD46F0}
+		{19BD17FA-7043-4ED8-8BB5-9409EE2BE579} = {19BD17FA-7043-4ED8-8BB5-9409EE2BE579}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverLegendCore", "SilverLegendCore\SilverLegendCore.csproj", "{DAED2147-7BD2-4B88-A241-4565487B8DBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverLegendAssetsMenu", "SilverLegendAssetsMenu\SilverLegendAssetsMenu.csproj", "{16D35D43-35E3-41F5-A07C-2821F93561B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverLegendAssetsGame", "SilverLegendAssetsGame\SilverLegendAssetsGame.csproj", "{960B995A-A775-47B4-AC61-1D2C5BCD46F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19BD17FA-7043-4ED8-8BB5-9409EE2BE579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BD17FA-7043-4ED8-8BB5-9409EE2BE579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BD17FA-7043-4ED8-8BB5-9409EE2BE579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BD17FA-7043-4ED8-8BB5-9409EE2BE579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3785F4-5853-4311-AE3A-AE4C702631FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3785F4-5853-4311-AE3A-AE4C702631FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3785F4-5853-4311-AE3A-AE4C702631FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3785F4-5853-4311-AE3A-AE4C702631FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAED2147-7BD2-4B88-A241-4565487B8DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAED2147-7BD2-4B88-A241-4565487B8DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAED2147-7BD2-4B88-A241-4565487B8DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAED2147-7BD2-4B88-A241-4565487B8DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16D35D43-35E3-41F5-A07C-2821F93561B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16D35D43-35E3-41F5-A07C-2821F93561B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16D35D43-35E3-41F5-A07C-2821F93561B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16D35D43-35E3-41F5-A07C-2821F93561B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{960B995A-A775-47B4-AC61-1D2C5BCD46F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{960B995A-A775-47B4-AC61-1D2C5BCD46F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{960B995A-A775-47B4-AC61-1D2C5BCD46F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{960B995A-A775-47B4-AC61-1D2C5BCD46F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

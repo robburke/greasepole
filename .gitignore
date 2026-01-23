@@ -1,0 +1,72 @@
+# ===========================
+# Greasepole Project .gitignore
+# ===========================
+
+# -----------------
+# IDE / Editor
+# -----------------
+.vs/
+*.suo
+*.user
+*.csproj.user
+.idea/
+.claude/
+
+# -----------------
+# C# / .NET Build Artifacts
+# -----------------
+bin/
+obj/
+pub_output/
+pub_self_contained/
+pub_self_cotained/
+*.dll
+*.pdb
+*.exe
+!GodotLegend/GodotLegend.csproj
+
+# -----------------
+# Godot
+# -----------------
+# Import cache (regenerated on project open)
+.godot/
+*.import
+
+# Export templates (large, downloadable from Godot)
+templates*.zip
+temp_templates/
+temp_templates_*/
+
+# -----------------
+# Build Outputs
+# -----------------
+# GodotLegendGD web build output
+GodotLegendGD/builds/
+GodotLegend/exports/
+
+# -----------------
+# Deploy Scripts (private)
+# -----------------
+GodotLegendGD/deploy/
+
+# -----------------
+# Silverlight Build Artifacts
+# -----------------
+SilverLegend/**/bin/
+SilverLegend/**/obj/
+SilverLegend/**/ClientBin/
+SilverLegend/**/*.xap
+
+# -----------------
+# OS Generated
+# -----------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# -----------------
+# Misc
+# -----------------
+*.log
+*.tmp
+*.bak

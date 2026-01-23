@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16D35D43-35E3-41F5-A07C-2821F93561B8}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SilverLegendAssetsMenu</RootNamespace>
+    <AssemblyName>SilverLegendAssetsMenu</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\SilverLegend.Web\ClientBin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\SilverLegend.Web\ClientBin\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\LOAD_CHARSET_ALP_COLON.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_ALP_PERIOD.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_0.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_1.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_2.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_3.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_4.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_5.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_6.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_7.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_8.BMP" />
+    <Resource Include="Graphics\LOAD_CHARSET_DIG_9.BMP" />
+    <Resource Include="Graphics\LOAD_CURSORS_MOU_SEL1.BMP" />
+    <Resource Include="Graphics\LOAD_CURSORS_MOU_SEL2.BMP" />
+    <Resource Include="Graphics\LOAD_CURSORS_MOU_SEL3.BMP" />
+    <Resource Include="Graphics\LOAD_CURSORS_MOU_TCBL.BMP" />
+    <Resource Include="Graphics\LOAD_CURSORS_MOU_TCBR.BMP" />
+    <Resource Include="Graphics\LOAD_CURSORS_MOU_TCTL.BMP" />
+    <Resource Include="Graphics\LOAD_CURSORS_MOU_TCTR.BMP" />
+    <Resource Include="Graphics\LOAD_INVISIBLE.BMP" />
+    <Resource Include="Graphics\LOAD_SPLASHSCREEN.BMP" />
+    <Resource Include="Graphics\LOAD_WHITEDOT.BMP" />
+    <Resource Include="Graphics\MENU_JACKETBACK.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR1.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR10.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR11.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR12.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR13.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR14.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR15.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR16.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR17.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR18.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR19.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR2.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR20.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR3.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR4.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR5.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR6.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR7.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR8.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BAR9.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_BTNOPTIONS.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_CENTENNIAL.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_MENUJACKET.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_MENUPASSCREST1.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_MENUPASSCREST2.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_MENUPASSCREST3.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_NEXTSET.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_QUISDOLOR.BMP" />
+    <Resource Include="Graphics\MENU_JACKET_TXTSELECT.BMP" />
+    <Resource Include="Graphics\MENU_OPTIONSBACK.BMP" />
+    <Resource Include="Graphics\MENU_OPTIONS_RETURN.BMP" />
+    <Resource Include="Graphics\MENU_OPTIONS_TOGGLE.BMP" />
+    <Resource Include="Graphics\MENU_TITLEBACK.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_ACHIEVEMENT_UNLOCKED.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_ACHIEVEMENT_UNLOCKED.OLD.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_ACHIEVEMENT_UNLOCKED2.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_ACHIEVEMENT_UNLOCKED2.OLD.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_CREDITS1.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_CREDITS2.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_CREDITS3.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_CREDITS4.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_CREDITS5.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_CREDITS6.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_CREDITS7.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_EXIT.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_OPTIONS.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_OPTIONSGLOW1.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_OPTIONSGLOW2.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_OPTIONSGLOW3.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_START.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_STARTGLOW1.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_STARTGLOW2.BMP" />
+    <Resource Include="Graphics\MENU_TITLE_STARTGLOW3.BMP" />
+    <Resource Include="Graphics\TRANS_SLAMJACKET1.BMP" />
+    <Resource Include="Graphics\TRANS_SLAMJACKET2.BMP" />
+    <Resource Include="Graphics\TRANS_SLAMJACKET3.BMP" />
+    <Resource Include="Graphics\TRANS_SLAMJACKET4.BMP" />
+    <Resource Include="Sound\DISCIPLINES_APPLE.mp3" />
+    <Resource Include="Sound\DISCIPLINES_CHEM.mp3" />
+    <Resource Include="Sound\DISCIPLINES_CIVIL.mp3" />
+    <Resource Include="Sound\DISCIPLINES_DEFAULT.mp3" />
+    <Resource Include="Sound\DISCIPLINES_ELEC.mp3" />
+    <Resource Include="Sound\DISCIPLINES_ENGCHEM.mp3" />
+    <Resource Include="Sound\DISCIPLINES_ENGPHYS.mp3" />
+    <Resource Include="Sound\DISCIPLINES_GEO.mp3" />
+    <Resource Include="Sound\DISCIPLINES_MECH.mp3" />
+    <Resource Include="Sound\DISCIPLINES_METALS.mp3" />
+    <Resource Include="Sound\DISCIPLINES_MINING.mp3" />
+    <Resource Include="Sound\DISCIPLINES_RITUAL.mp3" />
+    <Resource Include="Sound\EFFECTS_ACHIEVEMENTUNLOCKED.mp3" />
+    <Resource Include="Sound\EFFECTS_ACHIEVEMENTUNLOCKED2.mp3" />
+    <Resource Include="Sound\EFFECTS_BIGJACKETSLAM.mp3" />
+    <Resource Include="Sound\EFFECTS_BIGJACKETWHOOSH.mp3" />
+    <Resource Include="Sound\EFFECTS_CROWDMURMUR.mp3" />
+    <Resource Include="Sound\EFFECTS_CROWDROAR1.mp3" />
+    <Resource Include="Sound\EFFECTS_CROWDROAR2.mp3" />
+    <Resource Include="Sound\EFFECTS_ICONIN.mp3" />
+    <Resource Include="Sound\EFFECTS_ICONOUT.mp3" />
+    <Resource Include="Sound\MENU_DECORATEREPEAT.mp3" />
+    <Resource Include="Sound\MENU_DROP.mp3" />
+    <Resource Include="Sound\MENU_GAMEINIT.mp3" />
+    <Resource Include="Sound\MENU_PLACEBAR.mp3" />
+    <Resource Include="Sound\MENU_SELECT.mp3" />
+    <Resource Include="Sound\MENU_TITLEREPEAT.mp3" />
+    <Resource Include="Sound\MENU_TOGGLE.mp3" />
+    <Resource Include="Sound\MUSIC_SCOTLAND.mp3" />
+    <Resource Include="Sound\MUSIC_TITLEINIT.mp3" />
+    <Resource Include="Sound\NARRATOR_GRAPHICSWARN.mp3" />
+    <Resource Include="Sound\NARRATOR_JACKETINIT.mp3" />
+    <Resource Include="Sound\NARRATOR_OPTIONINIT.mp3" />
+    <Resource Include="Sound\NARRATOR_RITUALWARN.mp3" />
+    <Resource Include="Sound\NARRATOR_STARTDELAY1.mp3" />
+    <Resource Include="Sound\NARRATOR_STARTDELAY2.mp3" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

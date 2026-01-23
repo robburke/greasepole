@@ -1,0 +1,11 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/client/2007"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#444444">
+  <TextBlock Text="Loading ..." HorizontalAlignment="Center" Foreground="#B3B3B3" Margin="0,100,0,10" />
+  <Grid HorizontalAlignment="Center">
+    <Rectangle x:Name="rectBorder" StrokeThickness="1" Stroke="#FFC8C8C8"
+               Height="7" Width="200" HorizontalAlignment="Left"/>
+    <Rectangle x:Name="rectBar" Fill="#FFB3B3B3"
+               Height="7" Width="0" HorizontalAlignment="Left" />
+  </Grid>
+</StackPanel>

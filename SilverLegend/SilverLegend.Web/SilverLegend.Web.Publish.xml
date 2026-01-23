@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://greasepole.net" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="greasepole.net" publishMethod="FTP" replaceMatchingFiles="True" userName="greasepole" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2T4SD8+q60mm4BBx1KCwwAAAAAACAAAAAAAQZgAAAAEAACAAAABflVXUAuZ5c5E8UHaQxvHpQyOkjriIYA6TaTlsNOWqXwAAAAAOgAAAAAIAACAAAAAXWlxjUhLZwVx1zncMw5GWl2chDF8jx4ChNhcrf57emyAAAABevtoJWpay2khOfoHEYY3MeLomoKjIfABYrFYmGjBcNkAAAAA2qG8+63dPPFsjIjmtH5KezhrmaSiZzIp+15XEsby564OJGriC19e7vAB4tuShtG3tO62frameAahavfyNZV9l" SelectedForPublish="True">
+    <file relUrl="ClientBin/SilverLegend.xap" publishTime="04/20/2010 09:10:16" />
+    <file relUrl="bin/ClientBin/SilverLegendAssetsGame.dll" publishTime="04/20/2010 08:23:18" />
+    <file relUrl="ClientBin/SilverLegendAssetsGame.dll" publishTime="04/20/2010 08:23:18" />
+    <file relUrl="bin/SplashScreen.xaml" publishTime="04/18/2010 23:49:55" />
+    <file relUrl="indexSimple.html" publishTime="04/17/2010 20:40:54" />
+    <file relUrl="Default.aspx" publishTime="04/20/2010 22:46:48" />
+    <file relUrl="bin/SilverLegend.Web.pdb" publishTime="04/20/2010 11:35:49" />
+    <file relUrl="AnalyticsSvc.svc" publishTime="04/18/2010 23:04:04" />
+    <file relUrl="images/favicon.ico" publishTime="04/17/2010 17:54:11" />
+    <file relUrl="Test.aspx" publishTime="04/17/2010 16:13:06" />
+    <file relUrl="clientaccesspolicy.xml" publishTime="04/17/2010 15:25:23" />
+    <file relUrl="Web.config" publishTime="04/20/2010 08:23:28" />
+    <file relUrl="bin/SplashScreen.js" publishTime="04/17/2010 10:42:28" />
+    <file relUrl="bin/SilverLegend.Web.dll" publishTime="04/20/2010 11:35:49" />
+    <file relUrl="SplashScreen.js" publishTime="04/17/2010 10:42:28" />
+    <file relUrl="ClientBin/SilverLegendAssetsMenu.dll" publishTime="04/20/2010 08:23:18" />
+    <file relUrl="images/SLMedallion_ENU.png" publishTime="04/20/2010 22:39:26" />
+    <file relUrl="SplashScreen.xaml" publishTime="04/18/2010 23:49:55" />
+    <file relUrl="Silverlight.js" publishTime="04/17/2010 10:15:06" />
+    <file relUrl="bin/ClientBin/SilverLegendAssetsMenu.dll" publishTime="04/20/2010 08:23:18" />
+    <file relUrl="LeaderboardSvc.svc" publishTime="04/17/2010 14:54:55" />
+  </publishProfile>
+  <publishProfile publishUrl="localhost" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="Default Web Site/Greasepole" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="True" profileName="Profile1" publishMethod="MSDeploy" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="False" />
+</publishData>

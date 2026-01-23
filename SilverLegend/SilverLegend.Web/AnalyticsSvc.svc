@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SilverLegend.Web.AnalyticsSvc" CodeBehind="AnalyticsSvc.svc.cs" %>

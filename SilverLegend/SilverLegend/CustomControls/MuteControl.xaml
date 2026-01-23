@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="SilverLegend.CustomControls.MuteControl"
+	xmlns="http://schemas.microsoft.com/client/2007"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Width="23" Height="23" Loaded="MuteControl_Loaded"
+  MouseEnter="MuteControl_MouseEnter"
+  MouseLeave="MuteControl_MouseLeave"
+  >
+    <Canvas ToolTipService.ToolTip="Sound On/Off">
+        <Rectangle Width="23" Height="23" Fill="#FF555555" Stroke="#FFFFFFFF" x:Name="OuterRect" />
+        <Rectangle Width="4.014" Height="7.12" Fill="#FF555555" Stroke="#FFFFFFFF" Canvas.Left="3.199" Canvas.Top="8.77" x:Name="InnerRect"/>
+        <Path Height="5.841" Width="10.8" Canvas.Left="5.934" Canvas.Top="3.608" Stretch="Fill" Stroke="#FFFFFFFF" Data="M9.4771242,7.6797385 L17.647058,2.4509804"/>
+        <Path Height="5.841" Width="10.8" Canvas.Left="5.934" Canvas.Top="15.009" Stretch="Fill" Stroke="#FFFFFFFF" Data="M9.8039217,16.666666 L16.339869,19.607843"/>
+        <Path Height="16.777" Width="1" Canvas.Left="15.447" Canvas.Top="3.852" Stretch="Fill" Stroke="#FFFFFFFF" Data="M19.444445,3.9215686 L19.444445,19.81246"/>
+        <Ellipse Height="17.358" Width="17.358" Canvas.Left="1.792" Canvas.Top="3.271" Stroke="#FFFF0000" x:Name="NoEllipse"/>
+        <Path Height="11.606" Width="13.338" Canvas.Left="4.004" Canvas.Top="6.385" Stretch="Fill" Stroke="#FFFF0000" Data="M16.341991,6.3852816 L4.0043292,16.991343" x:Name="NoPath"/>
+        <!--<extended:ToolTip x:Name="MyToolTip" Canvas.Left="-100" Content="Sound On/Off" Visibility="Collapsed" />-->
+    </Canvas>
+</UserControl>
