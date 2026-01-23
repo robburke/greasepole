@@ -25,6 +25,7 @@ The Greasepole event is about spirit, and team building, and working together to
 | Year | Version | Technology | Status |
 |------|---------|------------|--------|
 | 1999 | Original | C++ | Archived (source not included) |
+| 2007 | XBox | XNA + C++ | Archived (source not included) |
 | 2010 | Silverlight | C# | **Canonical** - included as reference |
 | 2025 | Godot C# | Godot 4.5.1 + C# | Complete(ish) |
 | 2025 | Godot GDScript | Godot 4.5.1 + GDScript | Web-playable, actively refined |
@@ -120,7 +121,7 @@ The Silverlight version cannot be run in modern browsers. The code is included f
 
 ## License
 
-[TBD - Add appropriate license]
+[MIT License](LICENSE) - Copyright (c) 1999-2025 Robert Burke and contributors
 
 ---
 
