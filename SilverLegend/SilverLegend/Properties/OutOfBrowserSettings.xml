@@ -1,0 +1,12 @@
+<OutOfBrowserSettings ShortName="Legend of the Greasepole" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>Legend of the Greasepole - Silverlight Edition - Bringing the Legend full circle back onto your desktop.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="Legend of the Greasepole" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="16,16">Images/AppIcon16.png</Icon>
+    <Icon Size="32,32">Images/AppIcon32.png</Icon>
+    <Icon Size="48,48">Images/AppIcon48.png</Icon>
+    <Icon Size="128,128">Images/AppIcon128.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

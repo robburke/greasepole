@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AnalyticsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="AnalyticsModelStoreContainer">
+          <EntitySet Name="Analytics" EntityType="AnalyticsModel.Store.Analytics" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Analytics">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="GameId" Type="int" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="IPAddress" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Notification" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="Parameters" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AnalyticsModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="AnalyticsEntities">
+          <EntitySet Name="Analytics" EntityType="AnalyticsModel.Analytic" />
+        </EntityContainer>
+        <EntityType Name="Analytic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="GameId" Nullable="false" />
+          <Property Type="DateTime" Name="Time" Nullable="false" />
+          <Property Type="String" Name="IPAddress" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notification" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Parameters" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="AnalyticsModelStoreContainer" CdmEntityContainer="AnalyticsEntities">
+          <EntitySetMapping Name="Analytics">
+            <EntityTypeMapping TypeName="AnalyticsModel.Analytic">
+              <MappingFragment StoreEntitySet="Analytics">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+                <ScalarProperty Name="Notification" ColumnName="Notification" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="AnalyticsModel">
+        <EntityTypeShape EntityType="AnalyticsModel.Analytic" Width="1.5" PointX="0.75" PointY="0.75" Height="2.1725878906249996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

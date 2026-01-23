@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://greasepole.net/LeaderboardSvc.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://greasepole.net/LeaderboardSvc.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://greasepole.net/LeaderboardSvc.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="LeaderboardSvc_UpdateLeaderboard_InputMessage">
+    <wsdl:part name="parameters" element="UpdateLeaderboard" />
+  </wsdl:message>
+  <wsdl:message name="LeaderboardSvc_UpdateLeaderboard_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateLeaderboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="LeaderboardSvc_GetLongestGame_InputMessage">
+    <wsdl:part name="parameters" element="GetLongestGame" />
+  </wsdl:message>
+  <wsdl:message name="LeaderboardSvc_GetLongestGame_OutputMessage">
+    <wsdl:part name="parameters" element="GetLongestGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="LeaderboardSvc_GetHighestAchievementTotal_InputMessage">
+    <wsdl:part name="parameters" element="GetHighestAchievementTotal" />
+  </wsdl:message>
+  <wsdl:message name="LeaderboardSvc_GetHighestAchievementTotal_OutputMessage">
+    <wsdl:part name="parameters" element="GetHighestAchievementTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="LeaderboardSvc_GetTopTenLongestGames_InputMessage">
+    <wsdl:part name="parameters" element="GetTopTenLongestGames" />
+  </wsdl:message>
+  <wsdl:message name="LeaderboardSvc_GetTopTenLongestGames_OutputMessage">
+    <wsdl:part name="parameters" element="GetTopTenLongestGamesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LeaderboardSvc">
+    <wsdl:operation name="UpdateLeaderboard">
+      <wsdl:input wsaw:Action="urn:LeaderboardSvc/UpdateLeaderboard" message="LeaderboardSvc_UpdateLeaderboard_InputMessage" />
+      <wsdl:output wsaw:Action="urn:LeaderboardSvc/UpdateLeaderboardResponse" message="LeaderboardSvc_UpdateLeaderboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLongestGame">
+      <wsdl:input wsaw:Action="urn:LeaderboardSvc/GetLongestGame" message="LeaderboardSvc_GetLongestGame_InputMessage" />
+      <wsdl:output wsaw:Action="urn:LeaderboardSvc/GetLongestGameResponse" message="LeaderboardSvc_GetLongestGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHighestAchievementTotal">
+      <wsdl:input wsaw:Action="urn:LeaderboardSvc/GetHighestAchievementTotal" message="LeaderboardSvc_GetHighestAchievementTotal_InputMessage" />
+      <wsdl:output wsaw:Action="urn:LeaderboardSvc/GetHighestAchievementTotalResponse" message="LeaderboardSvc_GetHighestAchievementTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopTenLongestGames">
+      <wsdl:input wsaw:Action="urn:LeaderboardSvc/GetTopTenLongestGames" message="LeaderboardSvc_GetTopTenLongestGames_InputMessage" />
+      <wsdl:output wsaw:Action="urn:LeaderboardSvc/GetTopTenLongestGamesResponse" message="LeaderboardSvc_GetTopTenLongestGames_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,24 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <customBinding>
+                <binding name="CustomBinding_LeaderboardSvc">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_AnalyticsSvc">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://greasepole.net/LeaderboardSvc.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_LeaderboardSvc"
+                contract="LeaderboardSvcRef.LeaderboardSvc" name="CustomBinding_LeaderboardSvc" />
+            <endpoint address="http://greasepole.net/AnalyticsSvc.svc" binding="customBinding"
+                bindingConfiguration="CustomBinding_AnalyticsSvc" contract="AnalyticsSvcRef.AnalyticsSvc"
+                name="CustomBinding_AnalyticsSvc" />
+        </client>
+    </system.serviceModel>
+</configuration>

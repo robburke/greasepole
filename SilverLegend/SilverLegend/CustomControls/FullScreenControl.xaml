@@ -1,0 +1,14 @@
+﻿<UserControl
+    x:Class="SilverLegend.CustomControls.FullScreenControl"
+	xmlns="http://schemas.microsoft.com/client/2007"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Width="23" Height="23" Loaded="FullScreenControl_Loaded"
+  MouseEnter="FullScreenControl_MouseEnter"
+  MouseLeave="FullScreenControl_MouseLeave"
+  >
+    <Canvas ToolTipService.ToolTip="Fullscreen">
+        <Rectangle Width="23" Height="23" Fill="#FF555555" Stroke="#FFFFFFFF" x:Name="OuterRect"/>
+        <Rectangle Width="10.125" Height="10.125" Fill="#FF555555" Stroke="#FFFFFFFF" Canvas.Left="2.5" Canvas.Top="10.209" x:Name="InnerRect"/>
+        <!--<ToolTip x:Name="MyToolTip" Canvas.Left="-80" Content="Fullscreen" Visibility="Collapsed" />-->
+    </Canvas>
+</UserControl>

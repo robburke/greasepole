@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GreasepoleModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="GreasepoleModelStoreContainer">
+          <EntitySet Name="Notifications" EntityType="GreasepoleModel.Store.Notifications" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Notifications">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="NotificationTime" Type="datetime" Nullable="false" />
+          <Property Name="IPAddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LongestGame" Type="int" Nullable="false" />
+          <Property Name="AchievementTotal" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GreasepoleModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="GreasepoleEntities">
+          <EntitySet Name="Notifications" EntityType="GreasepoleModel.Notification" />
+        </EntityContainer>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="DateTime" Name="NotificationTime" Nullable="false" />
+          <Property Type="String" Name="IPAddress" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LongestGame" Nullable="false" />
+          <Property Type="Int32" Name="AchievementTotal" Nullable="false" />
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="GreasepoleModelStoreContainer" CdmEntityContainer="GreasepoleEntities">
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="GreasepoleModel.Notification">
+              <MappingFragment StoreEntitySet="Notifications">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AchievementTotal" ColumnName="AchievementTotal" />
+                <ScalarProperty Name="LongestGame" ColumnName="LongestGame" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="NotificationTime" ColumnName="NotificationTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LeaderboardModel">
+        <EntityTypeShape EntityType="GreasepoleModel.Notification" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333335" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

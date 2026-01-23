@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="SilverLegend.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:slCC="clr-namespace:SilverLegend.CustomControls"
+    Loaded="PageLoaded"
+    GotFocus="UserControl_GotFocus"
+    LostFocus="UserControl_LostFocus"
+    >
+    <Canvas x:Name="LayoutRoot" Background="#F444">
+        <Canvas x:Name="GameCanvasRoot"
+            Width="640"
+            Height="480"
+            Background="Transparent">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform x:Name="GameCanvasScale" ScaleX="1" ScaleY="1" />
+                    <TranslateTransform x:Name="GameCanvasTranslation" X="0" Y="0" />
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Canvas.Clip>
+                <RectangleGeometry x:Name="GameCanvasClipRect" Rect="0, 0, 640, 480"/>
+            </Canvas.Clip>
+            <Canvas x:Name="GameCanvas" Cursor="None" Width="640" Height="480"/>
+            <Canvas x:Name="LoadingScreenCanvas" Width="640" Height="480">
+                <Image Source="/SilverLegend;component/Images/SplashScreen.jpg" Width="640" Height="480" />
+                <Image Source="/SilverLegend;component/Images/SplashScreenFrosh.bmp" x:Name="FroshOnLoadingScreenImage" Canvas.Top="410" Canvas.Left="50" Width="54" Height="54" />
+            </Canvas>
+
+            <slCC:FullScreenControl x:Name="FullScreenToggleControl" Width="25" Height="25" Canvas.Left="595" Canvas.Top="49" Opacity="0.3" />
+            <slCC:MuteControl x:Name="MuteToggleControl" Width="25" Height="25" Canvas.Left="565" Canvas.Top="49" Opacity="0.3" />
+        </Canvas>
+
+        <Canvas x:Name="MusicCanvasRoot"
+          Width="1"
+          Height="1" Visibility="Collapsed" />
+        <Canvas x:Name="DebugCanvas" Visibility="Collapsed">
+            <Rectangle x:Name="TestRect" Width="20" Height="20" Fill="#FFFFFFFF" Stroke="#FF000000" Canvas.Left="0" Canvas.Top="0"/>
+            <TextBlock x:Name="ProgressText" Width="400" Height="400" TextWrapping="Wrap" Text="Debug text" />
+        </Canvas>
+    </Canvas>
+
+</UserControl>
