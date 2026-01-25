@@ -249,6 +249,10 @@ func _init_state_sprites(state: int):
 			# Only start if TITLEINIT not playing - aiMenuAndDisplay will start loop when intro finishes
 			AIMethods.s_sound[Enums.ASSList.SSND_MENU_TITLEREPEAT].stop()
 			AIMethods.s_sound[Enums.ASSList.SSND_MENU_LOADREPEAT].stop()
+
+			# Play jacket init narrator sound (C# GameLoop.cs line 720)
+			AIMethods.l_sound[Enums.ASLList.LSND_NARRATOR_JACKETINIT].play(SoundbankInfo.VOL_HOLLAR)
+
 			if not AIMethods.l_sound[Enums.ASLList.LSND_MUSIC_TITLEINIT].is_playing():
 				AIMethods.s_sound[Enums.ASSList.SSND_MENU_DECORATEREPEAT].loop(SoundbankInfo.VOL_MUSIC)
 
