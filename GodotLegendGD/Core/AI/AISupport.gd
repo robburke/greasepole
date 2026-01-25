@@ -615,8 +615,11 @@ static func ais_topple_pyramid() -> void:
 			and not AIMethods.l_sound[Enums.ASLList.LSND_POPBOY_EXAM1].is_playing() \
 			and not AIMethods.l_sound[Enums.ASLList.LSND_POPBOY_EXAM2].is_playing() \
 			and not AIMethods.l_sound[Enums.ASLList.LSND_POPBOY_EXAM3].is_playing():
-			# Pop Boy has his say
-			AIMethods.l_sound[Enums.ASLList.LSND_POPBOY_EXAM1 + AIMethods.R.randi() % 3].play(SoundbankInfo.VOL_HOLLAR, 0)
+			# Pop Boy has his say - make frosh think around him and set behavior
+			# (POPBOY_ADVICE sound plays via behavior 5 handling in AIFrosh)
+			ais_think_for_al(AIMethods.spr_pop_boy)
+			AIMethods.spr_pop_boy.n_attrib[Enums.NAttrFrosh.ATTR_BEHAVIOR] = 5
+			AIMethods.spr_pop_boy.n_cc = 0
 		else:
 			# George gets his say
 			if not AIMethods.l_sound[Enums.ASLList.LSND_EXAM_TOSS1].is_playing() and AIMethods.SPEECHOK() \

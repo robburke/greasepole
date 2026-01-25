@@ -666,14 +666,14 @@ static func ais_change_arm() -> int:
 # === ACHIEVEMENT UNLOCKED NOTICE ===
 
 static func ai_achievement_unlocked_notice(s: TSprite) -> void:
-	if s.n_cc == 25:
+	if s.n_cc == 30:
 		if s.sprite_text == TSprite.SpriteTextType.None:
 			s.set_frame(AIMethods.frm[Enums.GameBitmapEnumeration.bmpACHIEVEMENTUNLOCKED2])
 			AIMethods.s_sound[Enums.ASSList.SSND_EFFECTS_ACHIEVEMENTUNLOCKED2].play(SoundbankInfo.VOL_FULL, AICrowd.pan_on_x(s))
 		else:
 			s.n_a = 255
 
-	if s.n_cc >= 80:
+	if s.n_cc >= 140:
 		AIFlyInAndOut.ai_init_fly_in_and_out_2(s, Callable(AIMisc, "ai_delete_me"), s.n_x, s.n_y, s.n_x, -40, 1, 1)
 
 
@@ -694,14 +694,13 @@ static func ai_init_bar(s: TSprite, n_bar_number: int) -> void:
 		0: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_APPLE
 		1: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_CHEM
 		2: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_CIVIL
-		3: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_DEFAULT
-		4: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_ELEC
+		3: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_ELEC
+		4: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_ENGPHYS
 		5: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_ENGCHEM
-		6: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_ENGPHYS
-		7: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_GEO
+		6: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_GEO
+		7, 17: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_METALS
 		8: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_MECH
-		9: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_METALS
-		10: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_MINING
+		9: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_MINING
 		15: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_MECH
 		19: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_RITUAL
 		_: s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_SOUND] = Enums.ASLList.LSND_DISCIPLINES_DEFAULT
@@ -743,36 +742,67 @@ static func ai_achievement_text(s: TSprite) -> void:
 # === NEXT ACHIEVEMENT SCREEN ===
 
 static func ai_next_achievement_screen(s: TSprite) -> void:
-	if AISupport.ais_mouse_over(s):
-		if Globals.InputService.left_button_pressed():
-			AIMethods.s_sound[Enums.ASSList.SSND_MENU_TOGGLE].play(SoundbankInfo.VOL_FULL, AICrowd.pan_on_x(s))
-			var next_group: int = Globals.myGameConditions.get_achievement_group() + 1
-			var max_groups: int = (PoleGameAchievement.list.size() + 5) / 6  # 6 achievements per screen
-			if next_group >= max_groups:
-				next_group = 0
-			Globals.myGameConditions.set_achievement_group(next_group)
+	var max_groups: int = (PoleGameAchievement.list.size() + 5) / 6  # 6 achievements per screen
+	if Globals.InputService.left_button_pressed() and AISupport.ais_mouse_over(s):
+		Globals.myGameConditions.set_achievement_group((Globals.myGameConditions.get_achievement_group() + 1) % max_groups)
+	if Globals.InputService.toggle_forward_button_pressed():
+		Globals.myGameConditions.set_achievement_group((Globals.myGameConditions.get_achievement_group() + 1) % max_groups)
+	if Globals.InputService.toggle_back_button_pressed():
+		Globals.myGameConditions.set_achievement_group((Globals.myGameConditions.get_achievement_group() - 1 + max_groups) % max_groups)
 
 
 # === PREV BAR SCREEN ===
 
 static func ai_prev_bar_screen(s: TSprite) -> void:
-	if AISupport.ais_mouse_over(s):
-		if Globals.InputService.left_button_pressed():
-			AIMethods.s_sound[Enums.ASSList.SSND_MENU_TOGGLE].play(SoundbankInfo.VOL_FULL, AICrowd.pan_on_x(s))
-			var next_group: int = Globals.myGameConditions.get_bar_group() - 1
-			if next_group < 0:
-				next_group = Globals.myGameConditions.NUM_BAR_GROUPS - 1
-			Globals.myGameConditions.set_bar_group(next_group)
+	if Globals.InputService.left_button_pressed() and AISupport.ais_mouse_over(s):
+		Globals.myGameConditions.set_bar_group((Globals.myGameConditions.get_bar_group() - 1 + Globals.myGameConditions.NUM_BAR_GROUPS) % Globals.myGameConditions.NUM_BAR_GROUPS)
+
+	if Globals.InputService.toggle_forward_button_pressed():
+		Globals.myGameConditions.set_bar_group((Globals.myGameConditions.get_bar_group() + 1) % Globals.myGameConditions.NUM_BAR_GROUPS)
+	if Globals.InputService.toggle_back_button_pressed():
+		Globals.myGameConditions.set_bar_group((Globals.myGameConditions.get_bar_group() - 1 + Globals.myGameConditions.NUM_BAR_GROUPS) % Globals.myGameConditions.NUM_BAR_GROUPS)
 
 
 static func ai_next_bar_screen(s: TSprite) -> void:
-	if AISupport.ais_mouse_over(s):
-		if Globals.InputService.left_button_pressed():
-			AIMethods.s_sound[Enums.ASSList.SSND_MENU_TOGGLE].play(SoundbankInfo.VOL_FULL, AICrowd.pan_on_x(s))
-			var next_group: int = Globals.myGameConditions.get_bar_group() + 1
-			if next_group >= Globals.myGameConditions.NUM_BAR_GROUPS:
-				next_group = 0
-			Globals.myGameConditions.set_bar_group(next_group)
+	if Globals.InputService.left_button_pressed() and AISupport.ais_mouse_over(s):
+		Globals.myGameConditions.set_bar_group((Globals.myGameConditions.get_bar_group() + 1) % Globals.myGameConditions.NUM_BAR_GROUPS)
+
+
+# === PICK JACKET BAR SPOT ===
+# Automatically picks the best jacket spot for a bar (used for quick-click placement)
+
+static func ais_pick_jacket_bar_spot(s: TSprite) -> bool:
+	var n_distance: Array[int] = []
+	n_distance.resize(NUM_JBAR_SPOTS)
+
+	# Calculate distance from bar to each jacket spot
+	for i in range(NUM_JBAR_SPOTS):
+		n_distance[i] = absi(s.n_x - N_JSPOT_X[i]) + absi(s.n_y - N_JSPOT_Y[i])
+
+	# Find closest empty spot
+	var n_spot_to_use: int = 0
+	for i in range(NUM_JBAR_SPOTS):
+		if Globals.myGameConditions.get_j_bar(n_spot_to_use) != Globals.myGameConditions.NO_BAR:
+			n_spot_to_use = i
+		if n_distance[i] < n_distance[n_spot_to_use] and Globals.myGameConditions.get_j_bar(i) == Globals.myGameConditions.NO_BAR:
+			n_spot_to_use = i
+
+	# If closest spot is too far (>100), find any empty spot
+	if n_distance[n_spot_to_use] > 100:
+		for i in range(NUM_JBAR_SPOTS - 1, -1, -1):
+			if Globals.myGameConditions.get_j_bar(i) == Globals.myGameConditions.NO_BAR:
+				n_spot_to_use = i
+
+	# If no empty spot available, return false
+	if Globals.myGameConditions.get_j_bar(n_spot_to_use) != Globals.myGameConditions.NO_BAR:
+		return false
+
+	# Place bar on jacket
+	s.n_attrib[Enums.AttrBar.ATTR_ON_JACKET_POSITION] = n_spot_to_use
+	Globals.myGameConditions.set_j_bar(n_spot_to_use, s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_DISCIPLINE])
+	AIFlyInAndOut.ai_init_fly_in_and_out_2(s, Callable(AIMenuAndDisplay, "ai_bar"), s.n_x, s.n_y, N_JSPOT_X[n_spot_to_use], N_JSPOT_Y[n_spot_to_use], 1, 1)
+
+	return true
 
 
 # === BAR (DISCIPLINE CREST) ===
@@ -810,25 +840,22 @@ static func ai_bar(s: TSprite) -> void:
 		s.n_y = Globals.InputService.get_mouse_y()
 
 		if not Globals.InputService.left_button_down():
-			# Dropped - check if dropped on jacket
-			var n_spot: int = BAR_OFF_JACKET
-			for i in range(NUM_JBAR_SPOTS):
-				if s.n_x > N_JSPOT_X[i] - 20 and s.n_x < N_JSPOT_X[i] + 100:
-					if s.n_y > N_JSPOT_Y[i] - 10 and s.n_y < N_JSPOT_Y[i] + 30:
-						n_spot = i
-						break
-
-			AIMethods.s_sound[Enums.ASSList.SSND_MENU_DROP].play(SoundbankInfo.VOL_FULL, AICrowd.pan_on_x(s))
 			s.b_attrib[Enums.BAttrBar.BATTR_BEING_DRAGGED] = false
 
-			if n_spot != BAR_OFF_JACKET:
-				# Placed on jacket
-				s.n_attrib[Enums.AttrBar.ATTR_ON_JACKET_POSITION] = n_spot
-				Globals.myGameConditions.set_j_bar(n_spot, s.n_attrib[Enums.AttrBar.ATTR_ASSOCIATED_DISCIPLINE])
-				AIFlyInAndOut.ai_init_fly_in_and_out_2(s, Callable(AIMenuAndDisplay, "ai_bar"), s.n_x, s.n_y, N_JSPOT_X[n_spot], N_JSPOT_Y[n_spot], 1, 1)
+			# C# logic: Quick click (nCC < 7) OR dragged far from original position -> try auto-place on jacket
+			if s.n_cc < 7 or (s.n_cc >= 7 and absi(s.n_x - s.n_attrib[Enums.AttrBar.ATTR_ON_SCREEN_X]) > 160):
+				if not ais_pick_jacket_bar_spot(s):
+					# Couldn't auto-place, fly back
+					if b_my_bar_group_on_screen:
+						AIFlyInAndOut.ai_init_fly_in_and_out_2(s, Callable(AIMenuAndDisplay, "ai_bar"), s.n_x, s.n_y, s.n_attrib[Enums.AttrBar.ATTR_ON_SCREEN_X], s.n_attrib[Enums.AttrBar.ATTR_ON_SCREEN_Y], 1, 1)
+					else:
+						AIFlyInAndOut.ai_init_fly_in_and_out_2(s, Callable(AIMenuAndDisplay, "ai_bar"), s.n_x, s.n_y, 700, s.n_y, 1, 1)
 			else:
-				# Not on jacket - fly back to screen position
-				AIFlyInAndOut.ai_init_fly_in_and_out_2(s, Callable(AIMenuAndDisplay, "ai_bar"), s.n_x, s.n_y, s.n_attrib[Enums.AttrBar.ATTR_ON_SCREEN_X], s.n_attrib[Enums.AttrBar.ATTR_ON_SCREEN_Y], 1, 1)
+				# Dragged but not far enough - fly back to screen position
+				if b_my_bar_group_on_screen:
+					AIFlyInAndOut.ai_init_fly_in_and_out_2(s, Callable(AIMenuAndDisplay, "ai_bar"), s.n_x, s.n_y, s.n_attrib[Enums.AttrBar.ATTR_ON_SCREEN_X], s.n_attrib[Enums.AttrBar.ATTR_ON_SCREEN_Y], 1, 1)
+				else:
+					AIFlyInAndOut.ai_init_fly_in_and_out_2(s, Callable(AIMenuAndDisplay, "ai_bar"), s.n_x, s.n_y, 700, s.n_y, 1, 1)
 
 
 # === JACKET SLAM TRANSITION ===
