@@ -17,7 +17,7 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/image="res://Assets/Graphics/LOAD_SPLASHSCREEN.png"
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [display]
 
