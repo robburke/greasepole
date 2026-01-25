@@ -1334,7 +1334,7 @@ public static partial class AIMethods
 
     public static void aiAchievementUnlockedNotice(TSprite s)
     {
-        if (s.nCC == 25)
+        if (s.nCC == 30)
         {
             if (s.SpriteText == SpriteTextType.None)
             {
@@ -1346,7 +1346,7 @@ public static partial class AIMethods
                 s.nA = 255;
             }
         }
-        if (s.nCC < 80)
+        if (s.nCC < 140)
         {
             //if (0 != s.nCC / 6 % 2)
             //    s.nY = -40;
