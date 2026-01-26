@@ -20,6 +20,8 @@ const MORECLARKHARD: int = 5
 
 const TIME_FALLING_FRAMES: int = 20
 const TIME_TPBM: int = 45
+const TIME_TPBM_PUB: int = 60   # TIME_TPBM + 15 - when PUB icon appears
+const TIME_TPBM_BAN: int = 75   # TIME_TPBM + 30 - when BAN icon appears
 
 
 # === ACHIEVEMENT CHECK ===
@@ -337,9 +339,9 @@ static func ai_push_scicon_m(s: TSprite) -> void:
 			Globals.myGameConditions.gb_tri_pub_ban = true
 			AIMethods.l_sound[Enums.ASLList.LSND_FRECS_HITAPPLE2].play(SoundbankInfo.VOL_HOLLAR)
 			AIMethods.ss_icons.include(SpriteInit.create_sprite(Enums.SpriteType.SPR_TRI))
-		60:  # TIME_TPBM + 15
+		TIME_TPBM_PUB:
 			AIMethods.ss_icons.include(SpriteInit.create_sprite(Enums.SpriteType.SPR_PUB))
-		75:  # TIME_TPBM + 30
+		TIME_TPBM_BAN:
 			AIMethods.ss_icons.include(SpriteInit.create_sprite(Enums.SpriteType.SPR_BAN))
 		136:
 			Globals.GameLoop.change_game_state(Enums.GameStates.STATETITLE)

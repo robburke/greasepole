@@ -22,6 +22,12 @@
 
 ## Fixed Bugs
 
+### Missing LOAD_SPLASHSCREEN background in menu modes (GDScript)
+**Fixed:** 2026-01-25
+**Description:** Grey background was visible in menu screens. The original game rendered LOAD_SPLASHSCREEN behind all menu content to prevent grey from showing.
+**Fix:** Added splashscreen sprite as first background layer in STATETITLE and STATEDECORATE initialization in `GameLoop.gd`. STATEOPTIONS inherits from STATETITLE so no separate fix needed.
+**Note:** C# version still needs this fix applied.
+
 ### Discipline bars playing wrong sound effects
 **Fixed:** 2025-01-24
 **Description:** Several discipline bars had wrong sound mappings:

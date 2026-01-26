@@ -316,6 +316,12 @@ static func ais_pick_closer_pyramid_spot(s: TSprite) -> bool:
 	return false
 
 
+static func ais_pick_hoisting_spot(_s: TSprite) -> void:
+	# DEAD CODE - Empty function in C# (SilverLegend and GodotLegend), never called
+	# Kept for parity with C# codebase
+	pass
+
+
 static func ais_pick_climbing_spot(s: TSprite) -> bool:
 	# Chooses a Climbing Spot and assigns it as the destination
 	# Returns false if no spot is available
@@ -427,6 +433,27 @@ static func ais_abandon_pizza(spr_pizza: TSprite) -> void:
 			AIMethods.ss_fr.get_sprite(i).n_attrib[Enums.NAttrFrosh.ATTR_GOAL] = n_new_goal
 			AIMethods.ss_fr.get_sprite(i).n_dest_x = AIMethods.ss_fr.get_sprite(i).n_x
 			AIMethods.ss_fr.get_sprite(i).n_dest_y = AIMethods.ss_fr.get_sprite(i).n_y
+
+
+static func ais_abandon_alien() -> void:
+	# DEAD CODE - Never called in C# (SilverLegend or GodotLegend)
+	# Kept for parity with C# codebase
+	# Frosh stop chasing ArtSci/Commie aliens when they leave
+	var n: int = AIMethods.ss_fr.get_number_of_sprites()
+	var n_new_goal: int
+	if AIMethods.R.randi() % 2 != 0:
+		n_new_goal = Enums.Goals.GOAL_MINDLESS_WANDERING
+	else:
+		n_new_goal = Enums.Goals.GOAL_THINK
+
+	for i in range(n):
+		var frosh: TSprite = AIMethods.ss_fr.get_sprite(i)
+		var n_goal: int = frosh.n_attrib[Enums.NAttrFrosh.ATTR_GOAL]
+		if n_goal == Enums.Goals.GOAL_ARTSCI or n_goal == Enums.Goals.GOAL_COMMIE:
+			frosh.n_attrib[Enums.NAttrFrosh.ATTR_PERSONALITY] = Enums.Personalities.PERS_HEAVYWEIGHT
+			frosh.n_attrib[Enums.NAttrFrosh.ATTR_GOAL] = n_new_goal
+			frosh.n_dest_x = frosh.n_x
+			frosh.n_dest_y = frosh.n_y
 
 
 static func ais_abandon_clark(spr_clark: TSprite) -> void:
