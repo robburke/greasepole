@@ -1104,6 +1104,9 @@ static func ai_act_11c(s: TSprite) -> void:
 # === BEHAVIOR 11D: EATING PIZZA UP HIGH ===
 
 static func ai_init_11d(s: TSprite) -> void:
+	# Re-entry guard - don't reset if already in this behavior
+	if s.pf_ai == Callable(AIFrosh, "ai_act_11d"):
+		return
 	s.n_cc = 0
 	s.set_behavior(Callable(AIFrosh, "ai_act_11d"))
 
@@ -1131,10 +1134,29 @@ static func ai_act_11d(s: TSprite) -> void:
 					s.n_dest_y = s.n_y
 					s.set_behavior(Callable(AIFrosh, "ai_act_11"))
 
+	# Support check - make sure frosh is supported on pyramid, else they fall
+	var support: SpriteSet = AISupport.ais_get_frosh_in_range(
+		s.n_x - 50, s.n_y - (AIDefine.D_FROSH_ARM_LINK_OFFSET_Y / 2),
+		s.n_x + 50, s.n_y + (AIDefine.D_FROSH_ARM_LINK_OFFSET_Y / 2))
+	var n_support: int = 0
+	var n: int = support.get_number_of_sprites()
+	for i in range(n):
+		if s != support.get_sprite(i):
+			if abs(s.n_z - support.get_sprite(i).n_z - 90) < 50:
+				n_support += 1
+				AISupport.ais_weight_on_shoulders(support.get_sprite(i))
+
+	if n_support < 1:
+		AISupport.ais_send_frosh_flying(s)
+		s.set_frame(AIMethods.frm[Enums.GameBitmapEnumeration.bmpFR1_1 + AIMethods.R.randi() % AIDefine.NSPR_FR1])
+
 
 # === BEHAVIOR 11E: BOOZING UP HIGH ===
 
 static func ai_init_11e(s: TSprite) -> void:
+	# Re-entry guard - don't reset if already in this behavior
+	if s.pf_ai == Callable(AIFrosh, "ai_act_11e"):
+		return
 	s.n_cc = 0
 	s.set_behavior(Callable(AIFrosh, "ai_act_11e"))
 
@@ -1159,6 +1181,16 @@ static func ai_act_11e(s: TSprite) -> void:
 					AIMethods.l_sound[Enums.ASLList.LSND_FROSH_CLARKFINISH1 + AIMethods.R.randi() % SoundbankInfo.NSND_FROSH_CLARKFINISH].play(SoundbankInfo.VOL_HOLLAR, AICrowd.pan_on_x(s))
 				else:
 					AIMethods.l_sound[Enums.ASLList.LSND_FROSH_CLARKFINISH3].play(SoundbankInfo.VOL_HOLLAR, AICrowd.pan_on_x(s))
+			30:
+				# Drunk frosh may drunkenly fall off the pyramid
+				if 0 == AIMethods.R.randi() % ((Globals.myGameConditions.get_booster(0) / 2) + 1):
+					AISupport.ais_send_frosh_flying(s)
+					s.nv_z = 10
+					s.nv_x = -6 if s.n_x < AIDefine.D_POLE_X else 6
+					if s.n_x < AIDefine.D_POLE_X:
+						s.set_frame(AIMethods.frm_m[Enums.GameBitmapEnumeration.bmpFR2_1 + AIMethods.R.randi() % AIDefine.NSPR_FR2])
+					else:
+						s.set_frame(AIMethods.frm[Enums.GameBitmapEnumeration.bmpFR2_1 + AIMethods.R.randi() % AIDefine.NSPR_FR2])
 			32:
 				s.n_cc = 0
 				s.nv_x = 0
@@ -1166,6 +1198,22 @@ static func ai_act_11e(s: TSprite) -> void:
 				s.n_dest_x = s.n_x
 				s.n_dest_y = s.n_y
 				s.set_behavior(Callable(AIFrosh, "ai_act_11"))
+
+	# Support check - make sure frosh is supported on pyramid, else they fall
+	var support: SpriteSet = AISupport.ais_get_frosh_in_range(
+		s.n_x - 50, s.n_y - (AIDefine.D_FROSH_ARM_LINK_OFFSET_Y / 2),
+		s.n_x + 50, s.n_y + (AIDefine.D_FROSH_ARM_LINK_OFFSET_Y / 2))
+	var n_support: int = 0
+	var n: int = support.get_number_of_sprites()
+	for i in range(n):
+		if s != support.get_sprite(i):
+			if abs(s.n_z - support.get_sprite(i).n_z - 90) < 50:
+				n_support += 1
+				AISupport.ais_weight_on_shoulders(support.get_sprite(i))
+
+	if n_support < 1:
+		AISupport.ais_send_frosh_flying(s)
+		s.set_frame(AIMethods.frm[Enums.GameBitmapEnumeration.bmpFR1_1 + AIMethods.R.randi() % AIDefine.NSPR_FR1])
 
 
 # === BEHAVIOR 14: CLING TO POLE ===

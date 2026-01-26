@@ -101,6 +101,10 @@ func _init_state_sprites(state: int):
 				b_play_riff_only_once = true
 
 			# Create Title Sprites
+			# Add splashscreen as background layer (prevents grey from showing through)
+			var splash_sprite: TSprite = SpriteInit.create_sprite(Enums.SpriteType.SPR_CLOUDS, 0, 0)
+			splash_sprite.set_frame(AIMethods.frm[Enums.GameBitmapEnumeration.bmpSPLASHSCREEN])
+			ss_menu.include(splash_sprite)
 			ss_menu.include(SpriteInit.create_sprite(Enums.SpriteType.SPRMNU_TITLEBACK))
 			ss_menu.include(SpriteInit.create_sprite(Enums.SpriteType.SPRMNU_TITLESTART))
 			ss_menu.include(SpriteInit.create_sprite(Enums.SpriteType.SPRMNU_TITLEEXIT))
@@ -255,6 +259,11 @@ func _init_state_sprites(state: int):
 
 			if not AIMethods.l_sound[Enums.ASLList.LSND_MUSIC_TITLEINIT].is_playing():
 				AIMethods.s_sound[Enums.ASSList.SSND_MENU_DECORATEREPEAT].loop(SoundbankInfo.VOL_MUSIC)
+
+			# Add splashscreen as background layer (prevents grey from showing through)
+			var splash_sprite: TSprite = SpriteInit.create_sprite(Enums.SpriteType.SPR_CLOUDS, 0, 0)
+			splash_sprite.set_frame(AIMethods.frm[Enums.GameBitmapEnumeration.bmpSPLASHSCREEN])
+			ss_menu.include(splash_sprite)
 
 			# Background with title screen
 			var tmp_sprite: TSprite = SpriteInit.create_sprite(Enums.SpriteType.SPR_CLOUDS, 0, 0)

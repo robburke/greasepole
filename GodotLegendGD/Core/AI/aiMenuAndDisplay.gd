@@ -444,6 +444,8 @@ static func ai_icon_out_of_position(s: TSprite) -> void:
 
 	if ais_get_points_based_on(s.n_attrib[Enums.AttrIcon.ATTR_BUTTON_TYPE]) != 0:
 		s.n_attrib[Enums.AttrIcon.ATTR_ICON_STATUS] = 0
+		AIMethods.s_sound[Enums.ASSList.SSND_EFFECTS_ICONIN].play(SoundbankInfo.VOL_FULL, AICrowd.pan_on_x(s))
+		s.nv_x = 5
 
 
 static func ai_icon(s: TSprite) -> void:
@@ -495,13 +497,23 @@ static func ai_icon(s: TSprite) -> void:
 							or arm_status == Enums.ArmPositions.ARM_STHROW3:
 						s.set_frame(AIMethods.frm[Enums.GameBitmapEnumeration.bmpICOEXAM3])
 
+			# Check if inventory is now zero - transition to out of position
+			if ais_get_points_based_on(s.n_attrib[Enums.AttrIcon.ATTR_BUTTON_TYPE]) == 0:
+				AIMethods.s_sound[Enums.ASSList.SSND_EFFECTS_ICONOUT].play(SoundbankInfo.VOL_FULL, AICrowd.pan_on_x(s))
+				s.n_attrib[Enums.AttrIcon.ATTR_ICON_STATUS] = 2
+				return
+
 			# Handle click on icon
 			if Globals.InputService.left_button_pressed() and b_mouse_over:
-				if AIMethods.spr_arm != null and arm_status != Enums.ArmPositions.ARM_CHANGING:
+				if AIMethods.spr_arm != null and arm_status != Enums.ArmPositions.ARM_CHANGING \
+						and arm_status != Enums.ArmPositions.ARM_IRON_RING:
 					AIMethods.s_sound[Enums.ASSList.SSND_EFFECTS_ICONIN].play(SoundbankInfo.VOL_FULL, AICrowd.pan_on_x(s))
 					AIMethods.spr_arm.n_attrib[Enums.AttrArm.ATTR_ARM_STATUS] = Enums.ArmPositions.ARM_CHANGING
 					AIMethods.spr_arm.n_cc = 0
 					match s.n_attrib[Enums.AttrIcon.ATTR_BUTTON_TYPE]:
+						Enums.Buttons.BUTTON_TAUNT:
+							# LAAAAME FROSH!
+							AIMethods.spr_arm.n_attrib[Enums.AttrArm.ATTR_ARM_ACTION] = Enums.ArmPositions.ARM_APPLE
 						Enums.Buttons.BUTTON_APPLE:
 							AIMethods.spr_arm.n_attrib[Enums.AttrArm.ATTR_ARM_ACTION] = Enums.ArmPositions.ARM_APPLE
 						Enums.Buttons.BUTTON_PIZZA:
@@ -512,6 +524,10 @@ static func ai_icon(s: TSprite) -> void:
 							AIMethods.spr_arm.n_attrib[Enums.AttrArm.ATTR_ARM_ACTION] = Enums.ArmPositions.ARM_CLARK
 						Enums.Buttons.BUTTON_EXAM:
 							AIMethods.spr_arm.n_attrib[Enums.AttrArm.ATTR_ARM_ACTION] = Enums.ArmPositions.ARM_EXAM
+						Enums.Buttons.BUTTON_GREASE:
+							AIMethods.spr_arm.n_attrib[Enums.AttrArm.ATTR_ARM_ACTION] = Enums.ArmPositions.ARM_GREASE
+						Enums.Buttons.BUTTON_RING:
+							AIMethods.spr_arm.n_attrib[Enums.AttrArm.ATTR_ARM_ACTION] = Enums.ArmPositions.ARM_IRON_RING
 		2:  # Out of position
 			ai_icon_out_of_position(s)
 
