@@ -25,7 +25,7 @@ The Greasepole event is about spirit, and team building, and working together to
 | Year | Version | Technology | Status |
 |------|---------|------------|--------|
 | 1999 | Original | C++ | Archived (source not included) |
-| 2007 | XBox | XNA + C++ | Archived (source not included) |
+| 2007 | XBox | XNA + C# | Archived (source not included) |
 | 2010 | Silverlight | C# | **Canonical** - included as reference |
 | 2025 | Godot C# | Godot 4.5.1 + C# | Complete(ish) |
 | 2025 | Godot GDScript | Godot 4.5.1 + GDScript | Web-playable, actively refined |
@@ -34,7 +34,7 @@ The Greasepole event is about spirit, and team building, and working together to
 The game was originally written in C++ and released in 1999 (on CDs - remember those?). [Rob Burke](https://www.linkedin.com/in/robertcburke/) was the Producer, [Craig Calvert](https://www.linkedin.com/in/craig-calvert-61b4b91/) was the Artistic Director, and the game was created by a team of over 50 diverse Queens' students who brought the project to life. The original was accompanied by a [LegendWeb](https://robburke.net/greasepole/) including credits and images and sounds created during production (in need of a tune-up).
 
 ### XBox 360 Era (2007)
-The game was ported to XBox using XNA Game Studio. This version brought the game to consoles for those who had a subscription to the XNA Creators Club.
+The game was ported to XBox using XNA Game Studio by manually converting the C++ code to C#. This version brought the game to consoles for those who had a subscription to the XNA Creators Club.
 
 ### Silverlight Era (2010)
 The game was ported to Microsoft Silverlight using C#. This version ran successfully for years until Silverlight was deprecated. The Silverlight codebase is included here as the **canonical reference** for game logic and behavior.
