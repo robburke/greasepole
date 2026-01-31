@@ -6,7 +6,7 @@ A multimedia tribute to the ultimate Frosh Week event at Queen's University.
 
 **[How to Play](docs/legendweb/how-to-play.md)** (Pit-side cheat sheet, a.k.a. "Cooks")
 
-**[Visit the LegendWeb](https://robburke.net/greasepole/)** (Learn about The Game, The Legend, and The Making Of)
+**[Visit the LegendWeb](https://robburke.net/greasepole/)** (Refreshed in 2026 - info about the game, its creation, and Queen's Engineering traditions that accompanied the original game on CD)
 
 
 ---
@@ -112,7 +112,7 @@ The Silverlight version cannot be run in modern browsers. The code is included f
 
 - **[How to Play](docs/legendweb/how-to-play.md)** - Game controls and item guide
 - **[Credits](docs/legendweb/credits.md)** - Full credits for all 50+ contributors
-- **[The LegendWeb](https://robburke.net/greasepole/)** (Refreshed in 2026, the info about the game, its creation, and Queen's Engineering traditions that accompanied the original game on CD)
+- **[The LegendWeb](https://robburke.net/greasepole/)** (Refreshed in 2026 - info about the game, its creation, and Queen's Engineering traditions that accompanied the original game on CD)
 
 ---
 
