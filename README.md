@@ -6,6 +6,9 @@ A multimedia tribute to the ultimate Frosh Week event at Queen's University.
 
 **[How to Play](docs/legendweb/how-to-play.md)** (Pit-side cheat sheet, a.k.a. "Cooks")
 
+**[Visit the LegendWeb](https://robburke.net/greasepole/)** (Learn about The Game, The Legend, and The Making Of)
+
+
 ---
 
 ## About the Game
@@ -34,7 +37,7 @@ The Greasepole event is about spirit, and team building, and working together to
 The game was originally written in C++ and released in 1999 (on CDs - remember those?). [Rob Burke](https://www.linkedin.com/in/robertcburke/) was the Producer, [Craig Calvert](https://www.linkedin.com/in/craig-calvert-61b4b91/) was the Artistic Director, and the game was created by a team of over 50 diverse Queens' students who brought the project to life. The original was accompanied by a [LegendWeb](https://robburke.net/greasepole/) including credits and images and sounds created during production (in need of a tune-up).
 
 ### XBox 360 Era (2007)
-The game was ported to XBox using XNA Game Studio by manually converting the C++ code to C#. This version brought the game to consoles for those who had a subscription to the XNA Creators Club.
+The game was ported to XBox using by XNA Game Studio and manually converting the C++ code to C#. This version brought the game to consoles for those who had a subscription to the XNA Creators Club.
 
 ### Silverlight Era (2010)
 The game was ported to Microsoft Silverlight using C#. This version ran successfully for years until Silverlight was deprecated. The Silverlight codebase is included here as the **canonical reference** for game logic and behavior.
@@ -109,6 +112,7 @@ The Silverlight version cannot be run in modern browsers. The code is included f
 
 - **[How to Play](docs/legendweb/how-to-play.md)** - Game controls and item guide
 - **[Credits](docs/legendweb/credits.md)** - Full credits for all 50+ contributors
+- **[The LegendWeb](https://robburke.net/greasepole/)** (Refreshed in 2026, the info about the game, its creation, and Queen's Engineering traditions that accompanied the original game on CD)
 
 ---
 
