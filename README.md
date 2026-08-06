@@ -42,6 +42,8 @@ The game was ported to XBox using by XNA Game Studio and manually converting the
 ### Silverlight Era (2010)
 The game was ported to Microsoft Silverlight using C#. This version ran successfully for years until Silverlight was deprecated. The Silverlight codebase is included here as the **canonical reference** for game logic and behavior.
 
+Historical footnote: the Silverlight leaderboard's config shipped with the live password for its GoDaddy SQL database, a Beavis and Butthead reference of which the team remains proud. The database went dark along with the Silverlight era, and in 2026 the password was redacted from this repository's history before the credential-scraping bots of the AI age could find it. It served with honour.
+
 ### Godot Revival feat. AI (2025)
 Silverlight is dead, but the Greasepole is eternal. Working collaboratively with [Claude](https://claude.ai) (Anthropic's AI assistant), the game was ported in two stages:
 
