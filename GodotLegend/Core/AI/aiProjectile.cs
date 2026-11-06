@@ -1009,7 +1009,10 @@ public static partial class AIMethods
                             }
                         }
                         if (0 == R.Next(150))
-                            s.nAttrib[((int)attrArm.attrArmAction)] = 1; s.nCC = 0;
+                        { 
+                            s.nAttrib[((int)attrArm.attrArmAction)] = 1; 
+                            s.nCC = 0; // 2025 Note: this was previously outside the braces and ran every time regardless of Random throw. Might have been a bug, don't recall the intent.
+                        }
                         break;
                     case 1: // Unknown
                         switch (s.nCC)

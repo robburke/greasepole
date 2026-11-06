@@ -70,3 +70,9 @@ Desktop.ini
 *.log
 *.tmp
 *.bak
+
+# GodotLegend export builds (regenerable, ~190 MB of exes)
+GodotLegend/builds/
+
+# stray file from a shell redirect to nul
+/nul
